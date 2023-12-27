@@ -76,7 +76,7 @@ public class Weapon {
 
 	public void repairWith(RepairKit kit) {
         int repairPoints = kit.use();
-        setDurability(Math.min(getDurability() + repairPoints, getMaxDurability()));
+        setDurability(Math.min(getDurability() + repairPoints, getDurability()));
     }
 
 }
