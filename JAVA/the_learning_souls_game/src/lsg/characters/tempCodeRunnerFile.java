@@ -1,0 +1,2 @@
+
+			status = MSG_DEAD ;
