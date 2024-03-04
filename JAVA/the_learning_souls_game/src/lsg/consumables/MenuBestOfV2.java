@@ -29,8 +29,4 @@ public class MenuBestOfV2 {
         }
         return menuB;
     }
-    public static void main(String[] args) {
-        MenuBestOfV2 bestOfV2 = new MenuBestOfV2();
-        System.out.println(bestOfV2.toString());
-    }
 }
