@@ -8,11 +8,10 @@ public class RepairKit extends Consumable {
     }
    @Override
     public int use() {
-        if (getCapacity() > 0) {
-            return 1;
-        } else {
-            return 0;
-        }
+        if (this.getCapacity() == 0) return 0;
+        this.setCapacity(this.getCapacity() - 1);
+        return 1;
     }
 }
+
 
