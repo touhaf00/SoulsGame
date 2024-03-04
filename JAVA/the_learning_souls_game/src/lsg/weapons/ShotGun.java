@@ -7,9 +7,5 @@ public class ShotGun extends Weapon {
 	public ShotGun() {
 		super(NAME, 6, 20, 5, 100) ;
 	}
-	
-	public static void main(String[] args) {
-		System.out.println(new ShotGun());
-	}
 
 }
