@@ -1,10 +1,14 @@
 package lsg.armor;
 
-public class ArmorItem {
+import lsg.bags.Collectible;
+
+public class ArmorItem implements Collectible {
 	
 	private String name ;
 	
 	private float armorValue ;
+	private static final int WEIGHT = 4;
+
 	
 	public ArmorItem(String name, float armorValue) {
 		this.name = name ;
@@ -22,6 +26,11 @@ public class ArmorItem {
 	@Override
 	public String toString() {
 		return getName() + "(" + getArmorValue() + ")" ;
+	}
+
+	@Override
+	public int getWeight() {
+		return WEIGHT;
 	}
 	
 }
