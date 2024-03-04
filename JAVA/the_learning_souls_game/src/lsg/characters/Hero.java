@@ -1,9 +1,10 @@
 package lsg.characters;
 
 import lsg.armor.ArmorItem;
-import lsg.armor.BlackWitchVeil;
-import lsg.armor.RingedKnightArmor;
 import lsg.buffs.rings.Ring;
+import lsg.exceptions.NoBagException;
+
+import static java.lang.String.format;
 
 public class Hero extends Character{
 	
@@ -140,17 +141,50 @@ public class Hero extends Character{
 			total = (r != null) ? total + r.computeBuffValue() : total ;
 		}
 		return total ;
-	}	
-	
-	public static void main(String[] args) {
-		Hero hero = new Hero() ;
-		
-		hero.setArmorItem(new BlackWitchVeil(), 1);
-//		hero.addArmor(new DragonSlayerLeggings(), 2);
-		hero.setArmorItem(new RingedKnightArmor(), 3);
-		System.out.println(hero.armorToString());
-		
+    }	
+	public void equip(ArmorItem item, int slot) throws NoBagException{
+		if (getBag()==null){
+			throw new NoBagException();
+		}
+		if(pullOut(item) != null){
+
+			this.setArmorItem(item, slot);
+			System.out.println(" and equips it !");
+
+		}
+    }
+
+    public void equip(Ring ring, int slot) throws NoBagException{
+		if (getBag()==null){
+			throw new NoBagException();
+		}
+	    if(pullOut(ring) != null){
+
+		    this.setRing(ring, slot);
+		    System.out.println(" and equips it !");
+
+	    }
+    }
+    public void printRings(){
+
+	    String rString = ("RINGS ");
+
+	    for(int i=0; i < MAX_RINGS; i++){
+
+		    if(this.rings[i] == null){
+
+			rString += format(" %2d:%-30s", i+1, "empty");
+
+		}else {
+
+			rString += format( " %2d:%-30s", i+1, this.rings[i].toString());
+
+		}
+
 	}
 
-	
+	System.out.println(rString);
+
+    }
+
 }
