@@ -1,7 +1,7 @@
 package lsg.consumables;
 
 import java.util.LinkedHashSet;
-import java.util.List;
+
 
 import lsg.consumables.drinks.Coffee;
 import lsg.consumables.drinks.Whisky;
@@ -28,9 +28,5 @@ public class MenuBestOfV4 extends LinkedHashSet<Consumable> {
             menuB += index++ + " : " + consumable.toString() + "\n";
         }
         return menuB;
-    }
-    public static void main(String[] args) {
-        MenuBestOfV4 bestOfV4 = new MenuBestOfV4();
-        System.out.println(bestOfV4.toString());
     }
 }
