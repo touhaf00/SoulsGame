@@ -1,16 +1,20 @@
 package lsg.weapons;
 
+import lsg.bags.Collectible;
 import lsg.consumables.repair.RepairKit;
+import lsg.exceptions.ConsumeEmptyException;
+import lsg.exceptions.ConsumeNullException;
 
-public class Weapon {
+public class Weapon implements Collectible {
 	
-	private static final String DURABILITY_STAT_STRING = "durability";
+	private static final String DURABILITY_STAT_STRING = "dur";
 	protected String name ;
 	
 	private int minDamage ;
 	private int maxDamage ;
 	private int stamCost ;
 	private int durability ;
+	private static final int WEIGHT= 2;
 	
 	public Weapon(String name, int minDamage, int maxDamage, int stamCost, int durability) {
 		this.name = name ;
@@ -74,9 +78,17 @@ public class Weapon {
 		return getName() + " (min:" + getMinDamage() + " max:" + getMaxDamage() + " stam:" + getStamCost() +" " + Weapon.DURABILITY_STAT_STRING + ": " + getDurability() + ")" ; 
 	}
 
-	public void repairWith(RepairKit kit) {
-        int repairPoints = kit.use();
-        setDurability(Math.min(getDurability() + repairPoints, getDurability()));
-    }
+	public void repairWith(RepairKit kit) throws ConsumeNullException, ConsumeEmptyException { 
+		if(kit == null){
+			throw new ConsumeNullException(kit);
+		}
+		if(kit.getCapacity()==0){
+			throw new ConsumeEmptyException(kit);
+		}
+		setDurability(getDurability() + kit.use()); }
 
+	@Override
+	public int getWeight() {
+		return WEIGHT;
+    }
 }
