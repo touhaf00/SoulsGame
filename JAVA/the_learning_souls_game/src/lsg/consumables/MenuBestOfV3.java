@@ -27,8 +27,4 @@ public class MenuBestOfV3 extends HashSet<Consumable> {
         }
         return menuB;
     }
-    public static void main(String[] args) {
-        MenuBestOfV3 bestOfV3 = new MenuBestOfV3();
-        System.out.println(bestOfV3.toString());
-    }
 }
