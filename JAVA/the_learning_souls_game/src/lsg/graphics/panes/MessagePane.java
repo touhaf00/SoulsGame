@@ -14,23 +14,29 @@ public class MessagePane extends VBox {
     public MessagePane() {
         this.setAlignment(Pos.CENTER);
     }
-    public void showMessage(String msg, int cycleCount, EventHandler<ActionEvent> finishedEvent){
-        System.out.println("Message displayed: Fight!");
-
+    public void showMessage(String msg, int cycleCount, EventHandler<ActionEvent> finishedEvent) {
+    
         GameLabel gameLabel = new GameLabel(msg);
         this.getChildren().add(gameLabel);
-
+    
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(3), gameLabel);
         translateTransition.setByY(-200);
-
+        translateTransition.setCycleCount(cycleCount); 
+    
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(3), gameLabel);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
-
+        fadeTransition.setCycleCount(cycleCount); 
+    
         translateTransition.play();
         fadeTransition.play();
-
-        fadeTransition.setOnFinished(event -> this.getChildren().remove(gameLabel));
-
+    
+        fadeTransition.setOnFinished(event -> {
+            this.getChildren().remove(gameLabel);
+            if (finishedEvent != null) {
+                finishedEvent.handle(event); 
+            }
+        });
     }
+    
 }
