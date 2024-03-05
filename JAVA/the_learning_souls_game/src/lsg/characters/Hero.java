@@ -19,6 +19,9 @@ public class Hero extends Character{
 	private ArmorItem[] armor ; // l'ensemble des pieces d'armure portees par le hero
 	
 	private Ring[] rings ;
+
+	private int stamRegen = 10;
+
 	
 	public Hero(String name){
 		super(name) ;
@@ -31,6 +34,14 @@ public class Hero extends Character{
 		rings = new Ring[MAX_RINGS] ;
 	}
 	
+	public void setStamRegen(int stamRegen){
+		this.stamRegen = stamRegen;
+	}
+
+	public int getStamRegen() {
+		return stamRegen;
+	}
+
 	public Hero(){
 		this(DEFAULT_NAME) ;
 	}
@@ -186,5 +197,10 @@ public class Hero extends Character{
 	System.out.println(rString);
 
     }
+	public void recuperate(){
+		this.setStamina(this.getStamina() + stamRegen);
+		this.setLife(this.getLife() + stamRegen);	
+	}
+
 
 }
