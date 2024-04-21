@@ -1,0 +1,6 @@
+.consumable {
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-border-radius: 3px;
+}

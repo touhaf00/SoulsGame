@@ -1,0 +1,128 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "LearningSoulsGame",
+            "request": "launch",
+            "mainClass": "lsg.LearningSoulsGame",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "lsg.LearningSoulsGameApplication",
+            "projectName": "JAVA",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "classPaths": [],
+            "modulePaths": [],
+            "vmArgs": [],
+            "console": "internalConsole",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "preLaunchTask": "create-jar"
+        },
+        {
+            "type": "java",
+            "name": "Launch LearningSoulsGameApplication",
+            "request": "launch",
+            "mainClass": "lsg.LearningSoulsGameApplication",
+            "vmArgs": "-classpath \"C:\\Program Files\\Java\\jdk1.8.0_281\\jre\\lib\\ext\\*\""
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "LearningSoulsGame",
+            "request": "launch",
+            "mainClass": "lsg.LearningSoulsGame",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "SmallBag",
+            "request": "launch",
+            "mainClass": "lsg.bags.SmallBag",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "RingOfDeath",
+            "request": "launch",
+            "mainClass": "lsg.buffs.rings.RingOfDeath",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "RingOfSwords",
+            "request": "launch",
+            "mainClass": "lsg.buffs.rings.RingOfSwords",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "Hero",
+            "request": "launch",
+            "mainClass": "lsg.characters.Hero",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "MenuBestOfV1",
+            "request": "launch",
+            "mainClass": "lsg.consumables.MenuBestOfV1",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "MenuBestOfV2",
+            "request": "launch",
+            "mainClass": "lsg.consumables.MenuBestOfV2",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "MenuBestOfV3",
+            "request": "launch",
+            "mainClass": "lsg.consumables.MenuBestOfV3",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "MenuBestOfV4",
+            "request": "launch",
+            "mainClass": "lsg.consumables.MenuBestOfV4",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "Dice",
+            "request": "launch",
+            "mainClass": "lsg.helper.Dice",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "Claw",
+            "request": "launch",
+            "mainClass": "lsg.weapons.Claw",
+            "projectName": "JAVA_72d9c41b"
+        },
+        {
+            "type": "java",
+            "name": "ShotGun",
+            "request": "launch",
+            "mainClass": "lsg.weapons.ShotGun",
+            "projectName": "JAVA_72d9c41b"
+        }
+    ]
+}
